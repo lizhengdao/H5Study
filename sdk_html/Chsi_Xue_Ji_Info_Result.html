@@ -1,0 +1,780 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>学信档案</title>
+    <link rel="icon" href="/archive/favicon.ico" type="image/x-icon" />
+    <link href="http://t1.chei.com.cn/common/jqueryui/1.8.11/themes/south-street/jquery-ui.custom.css" rel="stylesheet" />
+    <link href='/archive/css/theme/normal/theme_new.css' rel="stylesheet" type="text/css" />
+    <link href='http://t3.chei.com.cn/archive/js/statebox/stateBox.css' rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://t1.chei.com.cn/common/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://t1.chei.com.cn/common/jqueryui/1.8.11/jquery-ui.min.js"></script>
+    <script type="text/javascript" src='http://t2.chei.com.cn/archive/js/statebox/stateBox.js'></script>
+
+    <script src="http://t1.chei.com.cn/common/js/boomerang-min-20141211.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        BOOMR.init({
+            beacon_url: "http://www.chsi.com.cn/images/perf.gif",
+            DNS:{
+                base_url: "http://*.chdi.com.cn/images/"
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-100524-5']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+<img src='http://t1.chei.com.cn/common/wap/images/share_xxda.jpg' width='0' height='0' style='position: absolute;top:-100px;left: 0'/>
+<div id="topBar">
+    <div id="topLogo"></div>
+    <div id="menu1">
+        <ul>
+            <li class="onread"><a href="http://my.chsi.com.cn/archive/index.action?trnd=45665613942414042362357055927463">学信档案</a></li>
+            <li><a href="http://gaokao.chsi.com.cn/zyk/zytj/recommendContinue.action?trnd=45665613942414042362357055927463" target="_blank">专业推荐</a></li>
+            <li><a href="http://xz.chsi.com.cn/psn/zybk.action" target="_blank">专业百科</a></li>
+            <li><a href="http://gaokao.chsi.com.cn/zyk/myd/schAppraisalWelcome.action?trnd=45665613942414042362357055927463" target="_blank">院校满意度</a></li>
+            <li><a href="http://www.gfbzb.gov.cn/" target="_blank">征兵报名</a></li>
+            <li id="xzptOn"><a href="/archive/zysurveyindex.action?from=archive-header">职业调查</a></li>
+            <script type="text/javascript">
+                var theHref = document.location.href;
+                if(theHref.indexOf("zycp") != -1 || theHref.indexOf("zysurveyindex") != -1 || theHref.indexOf("zxssurvey") != -1){
+                    $("#xzptOn").addClass("onread").siblings("li").removeClass("onread");
+                }
+            </script>
+
+
+        </ul>
+    </div>
+
+    <div id="menu2" style="width:280px; word-break:break-all; word-wrap:break-word;">欢迎 895156386@qq.com
+
+
+        <a href="https://account.chsi.com.cn/account/account!show" target="_blank">账号</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://account.chsi.com.cn/account/help/index.jsp" target="_blank">帮助</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick='logoutFn(event);' href='https://account.chsi.com.cn/passport/logout'>退出</a>
+        <script type='text/javascript'>
+            function logoutFn(event){
+                var e = event ||window.event;
+                if(!confirm('确定要退出吗？')){
+                    if(e && e.preventDefault) {
+                        e.preventDefault();
+                    } else {
+                        e.returnValue = false;
+                    }
+                    return false;
+                }
+            };
+        </script>
+
+    </div>
+    <div class="clearFloat"></div>
+</div>
+<div id="mainPannel">
+    <div id="leftBG">
+        <div id="leftContBorder">
+
+
+
+
+
+
+
+
+
+
+
+
+            <script type="text/javascript">
+                $(function(){
+                    var requestUrl = "http://my.chsi.com.cn/archive/xjarchive.action";
+                    var contextPath = "http://my.chsi.com.cn/archive";
+                    requestUrl = requestUrl.replace(contextPath,"");
+                    $("#leftList").children("li").each(function(){
+                        var $this = $(this);
+                        var $childA = $this.find("a");
+                        if($childA.length>0) {
+                            var aHref = $childA.attr("href");
+                            if( aHref.indexOf(requestUrl) > 0
+                                || aHref.indexOf(requestUrl.replace("add","")) > 0
+                                || aHref.indexOf(requestUrl.replace("doadd","")) > 0
+                                || aHref.indexOf(requestUrl.replace("bind","")) > 0
+                                || aHref.indexOf(requestUrl.replace("dobind","")) > 0
+                                ||( aHref.indexOf('reportsendhistory')>0 &&(  //NSC
+                                requestUrl.indexOf('selectschoolfileaction')>0
+                                || requestUrl.indexOf('reportsenddetail')>0
+                                || requestUrl.indexOf('saveselectoptionaction')>0
+                                || requestUrl.indexOf('modifytransbatchaction')>0
+                                || requestUrl.indexOf('resendreport') > 0
+                                || requestUrl.indexOf('sendreportaction')>0 ))
+                                ||( aHref.indexOf('viewcollegenetrequestlistaction')>0 &&(//美国大学网
+                                requestUrl.indexOf('viewcollegenetreportaction')>0
+                                ||requestUrl.indexOf('comfirmsendreportaction')>0
+                                ||requestUrl.indexOf('collegenetquestions')>0 ))
+                                ||( aHref.indexOf('/digitary/historylist')>0 &&(  //Digitary
+                                requestUrl.indexOf('digitary')>0))
+                            ){
+
+                                $this.addClass("selected");
+                                return false;
+                            }
+                        }
+                    });
+                });
+            </script>
+
+            <ul id="leftList">
+                <li class='title'><span class="icon_all">&nbsp;</span><a href="/archive/educationinfoaction.action?trnd=70344974129442809465491848361718">高等教育</a> </li>
+                <li><a href="/archive/xjarchive.action?trnd=70344974129442809465491848361718">学籍信息(图像校对)</a></li>
+                <li><a href="/archive/xlarchive.action?trnd=70344974129442809465491848361718">学历信息</a></li>
+                <li><a href="/archive/syjsarchive.action?trnd=70344974129442809465491848361718">考研信息</a></li>
+                <li><a href="/archive/viewemploymentdestination.action">毕业去向</a></li>
+                <li class="line">&nbsp;</li>
+                <li class='title'><span class="icon_all">&nbsp;</span><a href="/archive/onlinereportaction.action?trnd=70344974129442809465491848361718">在线验证报告</a></li>
+                <li><a href="/archive/xjreport.action">高等学籍</a></li>
+                <li><a href="/archive/xlreport.action?trnd=70344974129442809465491848361718">高等学历</a></li>
+                <li class="line">&nbsp;</li>
+                <li class='title'><span class="icon_all">&nbsp;</span><a href="/archive/rzreportindexaction.action?trnd=70344974129442809465491848361718">纸质认证报告</a></li>
+                <li><a href="/archive/xlrzreport.action?trnd=70344974129442809465491848361718">高等学历</a></li>
+                <li><a href="/archive/zxsreport.action?trnd=70344974129442809465491848361718">高等教育成绩单</a></li>
+                <li><a href="/archive/seniorxlrzreport.action?trnd=70344974129442809465491848361718">中等学历</a></li>
+                <li><a href="/archive/gkreport.action?trnd=70344974129442809465491848361718">高考成绩单</a></li>
+                <li><a href="/archive/rzbg/gz/view.action?trnd=70344974129442809465491848361718">中学成绩单</a></li>
+                <li><a href="/archive/rzbg/hk/view.action?trnd=70344974129442809465491848361718">会考成绩单</a></li>
+                <li class="line">&nbsp;</li>
+                <li class='title'><span class="icon_all">&nbsp;</span><a href="/archive/foreigncooperation.action?trnd=70344974129442809465491848361718">国际合作申请</a></li>
+                <li><a href="/archive/viewcollegenetrequestlistaction.action?trnd=70344974129442809465491848361718">美国大学网<br />(ApplyWeb)</a></li>
+                <li><a href="/archive/reportsendhistory.action?trnd=70344974129442809465491848361718">美国学生信息中心<br />(NSC)</a> </li>
+                <li><a href="/archive/digitary/historylist.action?trnd=70344974129442809465491848361718">爱尔兰Digitary</a></li>
+                <li><a href="/archive/duo/historylist.action?trnd=70344974129442809465491848361718">荷兰DUO</a></li>
+                <li><a href="/archive/parchment/historylist.action?trnd=70344974129442809465491848361718">美国Parchment</a></li>
+
+            </ul>
+
+            <br />
+        </div>
+    </div>
+    <div id="rightBG">
+        <div id="rightContBorder">
+
+
+
+
+
+
+
+
+
+            <script type="text/javascript" src='http://t1.chei.com.cn/archive/js/jquery/jquery.form.js'></script>
+            <script type="text/javascript" src='http://t4.chei.com.cn/archive/js/archive/onlinereport-1.0.0.js'></script>
+            <script type="text/javascript" src='http://t2.chei.com.cn/archive/js/jquery/wtooltip.js'></script>
+            <script type="text/javascript" src='http://t1.chei.com.cn/archive/js/archive/photoquery-1.0.2.js'></script>
+
+            <style type='text/css'>
+                #tabs ul.tab_1 a:hover{text-decoration: none;}
+                .s-icon {
+                    background: url("/archive/images/theme/normal/sendReport.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+                    display: inline-block;
+                    height: 30px;
+                    margin-right: 10px;
+                    width: 30px;
+                    background-position: 0 -30px;
+                    height: 16px;
+                    margin-right: 8px;
+                    vertical-align:middle;
+                    width: 14px;
+                }
+                .vote-c {
+                    padding-top:2px;
+                    text-align:center;
+                    overflow:hidden;
+                    font-size:18px;
+                    font-weight: bold;
+                }
+                .vote-c a{
+                    text-decoration: underline;
+                }
+                li.zyxqjzg2 {
+                    padding: 4px 0 4px 120px;
+                }
+                .zyh1 {
+                    font-size: 18px;
+                    font-weight: 700;
+                    height: 50px;
+                    line-height: 50px;
+                    text-align: center;
+                }
+            </style>
+            <script language="javascript">
+                function closePhotoInfo(photoId){
+                    $("#photo_floatDiv_" + photoId).hide();
+                }
+                function initDataInfo(dataK, dataV) {
+                    $(document).data(dataK, dataV);
+                }
+                function reverseIt(a, b){
+                    document.getElementById("image_" + a).style.display="";
+                    document.getElementById("image_" + b).style.display="none";
+                    var $a = $("#photodiv_" + a);
+                    $a.addClass("onPhoto");
+                    $("#photodiv_" + b).removeClass("onPhoto");
+                    var $tips = $a.next('div[id^="pic_tips_"]');
+                    if($tips.length>0){
+                        $tips.show();
+                    }else{
+                        $a.nextAll('div[id^="pic_tips_"]').hide();
+                    }
+                }
+            </script>
+            <input type="hidden"  id="urlTrnd" value="78795370363158446711938554134163"/>
+            <div id="other_school" title="我还有学籍没有显示出来" class="collate_cnt" style="display:none;">
+                <p>系统没有找到您的在校生学籍信息，有可能是因为您注册时填写的姓名和身份证号两项与学校上报的学籍注册数据不相同导致的。<br/><br/></p>
+                <p>1、查看您注册时填写的姓名和身份证号信息&nbsp;<a href="https://account.chsi.com.cn/account/account!show" class="color5">点击查看</a><br/></p>
+                <p>2、姓名和证件号码无误，我还有学籍没显示出来&nbsp;<a href="#" onclick="closethis();bindxjreport()" class="color5">找找看？</a><br/><br/></p>
+                <div align="center"><input type="button" class="button5" value="我知道了" onclick="closethis()"/></div>
+            </div>
+            <div class="locationDiv">
+                <a href="/archive/educationinfoaction.action?trnd=78795370363158446711938554134163">高等教育</a>&nbsp;>&nbsp;<span class="lctSubMenu">[<a href="#" onclick="bindxjreport();return false;">我还有学籍没显示出来</a>]</span>学籍信息
+            </div>
+            <div id="zxyzCont" style="width:740px; margin:0 auto;">
+
+                <div>
+
+
+
+
+
+
+
+
+
+
+                    <script type="text/javascript">
+                        $(function(){
+                            var votePtgxbysjyzk = "134138583";
+                            ptgxbysjyzkSurvey(votePtgxbysjyzk);
+                        });
+                    </script>
+
+
+                    <div id="tabs">
+                        <ul class="tab_1">
+
+
+                            <li>
+                                <a href="#tabs-1"
+                                   onclick="prequerymate('1')"><span>本科-成都理工大学
+            </span>
+                                </a>
+                            </li>
+
+
+
+                        </ul>
+                        <div class="clearFloat">&nbsp;</div>
+
+                        <div id="tabs-1" class="tabsDiv">
+
+                            <div id="resultTable">
+                                <table width="740" border="0" cellpadding="5" cellspacing="1" class="xjxlTable">
+                                    <col width="110" />
+                                    <col width="190" />
+                                    <col width="110" />
+                                    <col width="190" />
+                                    <col width="120" />
+                                    <tr>
+                                        <th>姓名：</th>
+                                        <td colspan="3">李政道</td>
+                                        <td rowspan="10" valign="top" class="alignCenter">
+                                            <div id="image_134138583_lq" style="display:none;">
+                                                <img id="2" src="/archive/viewphoto.action?trnd=78795370363158446711938554134163&type=lq&dtid=134138583" align="absmiddle" width="110px" height='140px'/>
+                                            </div>
+                                            <div id="image_134138583_xj" style="display:">
+                                                <img id="1" src="/archive/viewphoto.action?trnd=78795370363158446711938554134163&type=xj&dtid=134138583" align="absmiddle" width="110px" height='140px'/>
+                                            </div>
+                                            <div class="photoDiv"><div id="photodiv_134138583_lq"  onclick='reverseIt("134138583_lq","134138583_xj")'>录取照片</div>
+                                                <div id="photodiv_134138583_xj" class="onPhoto" onclick='reverseIt("134138583_xj","134138583_lq")'>毕业照片</div><div style="display:" id="pic_tips_1"></div></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>性别：</th>
+                                        <td>男</td>
+                                        <th>出生日期：</th>
+                                        <td>1987年05月17日</td>
+                                    </tr>
+                                    <tr>
+                                        <th>民族：</th>
+                                        <td>汉族</td>
+                                        <th>证件号码：</th>
+                                        <td class="data-s2 ds2-134138583-m8">513723198705174951</td>
+                                    </tr>
+                                    <tr>
+                                        <th>学校名称：</th>
+                                        <td class="data-s2 ds2-134138583-m1">成都理工大学</td>
+                                        <th>层次：</th>
+                                        <td class="data-s2 ds2-134138583-m5">本科</td>
+                                    </tr>
+                                    <tr>
+                                        <th>专业：</th>
+                                        <td class="data-s2 ds2-134138583-m2">计算机科学与技术</td>
+                                        <th>学制：</th>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr>
+                                        <th>学历类别：</th>
+                                        <td class="data-s2 ds2-134138583-m6">普通</td>
+                                        <th>学习形式：</th>
+                                        <td class="data-s2 ds2-134138583-m7">普通全日制</td>
+                                    </tr>
+                                    <tr>
+                                        <th>分院：</th>
+                                        <td>信息科学与技术学院</td>
+                                        <th>系(所、函授站)：</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>班级：</th>
+                                        <td>2007050302</td>
+                                        <th>学号：</th>
+                                        <td class="data-s2 ds2-134138583-m4">200705030213</td>
+                                    </tr>
+                                    <tr>
+                                        <th>入学日期：</th>
+                                        <td>2007年09月01日</td>
+                                        <th>离校日期：</th>
+                                        <td>2011年06月20日</td>
+                                    </tr>
+                                    <tr>
+                                        <th>学籍状态：</th>
+                                        <td colspan='3'>不在籍（毕业）</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="alignCenter">
+
+                                <a href="#" class="buttonA" onclick="gochoosepay('134138583','xjarchive.action?tb=0');return false;">申请该学籍在线验证报告</a>&nbsp;
+
+                                <a href="http://www.chsi.com.cn/xlcx/bgys.jsp" target="_blank" class="colorBlueLine">什么是学籍在线验证报告</a>
+                            </div>
+
+
+                            <div id="pic_query_result_1">
+                            </div>
+
+                            <div class="alignCenter">
+
+
+                            </div>
+
+
+
+
+                        </div>
+                        <script type="text/javascript">
+                            photoQueryCheck("134138583",'xj',"1");
+                            //initDataInfo("ds2-134138583"+"-m1", "成都理工大学");
+                            //initDataInfo("ds2-134138583"+"-m2", "计算机科学与技术");
+                            //initDataInfo("ds2-134138583"+"-m4", "200705030213");
+                            //initDataInfo("ds2-134138583"+"-m5", "本科");
+                            //initDataInfo("ds2-134138583"+"-m6", "普通");
+                            //initDataInfo("ds2-134138583"+"-m7", "普通全日制");
+                            //initDataInfo("ds2-134138583"+"-m8", "513723198705174951");
+                        </script>
+
+                    </div>
+                </div>
+                <div class="take_care">
+                    说明：系统提供国家承认的当前在读以及2002年以来取得学历的各类高等教育学籍数据（不含自考）。
+
+                </div>
+                <div id="ptgxbysjyzk_survey" style="display:none;">
+                </div>
+
+
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#dialog1").dialog({
+                        bgiframe: false,
+                        autoOpen: false,
+                        width: 600,
+                        height: 310,
+                        modal: true
+                    });
+                    $( "#dialog3" ).dialog({
+                        autoOpen: false,
+                        width:400,
+                        height:200,
+                        modal: true
+                    });
+                });
+                function gochoosepay(id, d){
+                    $.ajax({
+                        type:'GET',
+                        data:{
+                            id:function(){
+                                return id;
+                            },
+                            destination:function(){
+                                return d;
+                            }
+                        },
+                        url:'xjonlinereport!chooseXjPay',
+                        dataType:'html',
+                        success:function(data){
+                            $("#dialog1").html(data);
+                            $("#dialog1").dialog('option', 'height', 310)
+                                .dialog('option','position',['cneter',100])
+                                .dialog('option', 'dialogClass', 'button3').dialog('option', 'title', '申请学籍在线验证报告').dialog('open');
+                        }
+                    });
+                }
+
+                function gochoosepayofprolong(id, d){
+                    $.ajax({
+                        type:'GET',
+                        data:{
+                            id:function(){
+                                return id;
+                            },
+                            destination:function(){
+                                return d;
+                            }
+                        },
+                        url:'xjonlinereport!chooseXjPayofProlong',
+                        dataType:'html',
+                        success:function(data){
+                            $("#dialog1").html(data);
+                            $("#dialog1").dialog('option', 'height', 310)
+                                .dialog('option','position',['cneter',100])
+                                .dialog('option', 'dialogClass', 'button3').dialog('option', 'title', '延长学籍在线验证报告有效期').dialog('open');
+                        }
+                    });
+                }
+
+                $(function() {
+                    //tabs
+                    var tb = 0;
+                    var countSize = $('.tabsDiv').size();
+                    if( tb >= countSize ){
+                        tb = 0;
+                    }
+                    $('.tab_1').children().eq(tb).addClass('selected').siblings('li').removeClass('selected');
+                    $('#tabs').children('.tabsDiv').eq(tb).show().siblings('.tabsDiv').hide();
+                    appraisalFromCookie(tb);
+                    $('.tab_1 a').click(function(){
+                        $(this).parent('li').addClass('selected').siblings('li').removeClass('selected');
+                        $($(this).attr('href')).show().siblings('.tabsDiv').hide();
+                        var tbCurrent = $('.tab_1').children().index($(this).parent('li'));
+                        appraisalFromCookie(tbCurrent);
+                        resizeRight();
+                        return false;
+                    });
+                    $(".buttonA").button();
+                    var num = 0;
+                    num++;
+                    var xjId = $('#xjId_'+num).val();
+                    loadmatelist(xjId,num);
+
+                    //显示投票结果
+                    var $voteResult = $("#voteResult");
+                    if(null != $voteResult && $voteResult.length > 0) {
+                        try {
+                            var cnt = varj["cnt"];
+                            $voteResult.append("("+cnt+")");
+                        } catch(e) {
+                        }
+                    }
+                });
+
+
+                $(function(){
+                    $(".collate_button03,.collate_button04").wTooltip({content: "您的校对结论已经提交至就读院校学籍管理部门，如需修改请联系就读院校学籍管理部门。"});
+                    $(".data-s2").each(function(){
+                        var classValuesArr = $(this).attr("class").split(" ");
+                        //$(this).html($(document).data(classValuesArr[1]));
+                        $(this).removeClass(classValuesArr[1]);
+                        $(this).removeClass(classValuesArr[0]);
+                    });
+                });
+
+                function  collateAgain(tbCount){
+                    $("#collate_again_"+tbCount).hide();
+                    $("#collate_again_1_"+tbCount).show();
+                    $("#collate_again_2_"+tbCount).show();
+                    return false;
+                }
+                function  appraisalFromCookie(tb){
+                    var cookieValue =  getCookie("appraisal_"+tb);
+                    if( cookieValue != "noAppraisal" ){
+                        $('#tabs').children('.tabsDiv').eq(tb).find('.appraisal').click();
+                    }
+                }
+
+                function  addAppraisalCookie(tb){
+                    var cookieName = "appraisal_"+tb;
+                    addCookie(cookieName,"noAppraisal");
+                    closedialog();
+                }
+
+                function addCookie(name,value){
+                    var cookieString=name+"="+escape(value);
+                    document.cookie=cookieString;
+                }
+                function getCookie(name){
+                    var strCookie=document.cookie;
+                    var arrCookie=strCookie.split("; ");
+                    for(var i=0;i<arrCookie.length;i++){
+                        var arr=arrCookie[i].split("=");
+                        if(arr[0]==name)return arr[1];
+                    }
+                    return "";
+                }
+                function loadbinddialog(){
+                    $('#other_school').dialog({
+                        autoOpen: true,
+                        width: 600,
+                        height: 210,
+                        modal: true
+                    });
+                }
+                function appraisalPhoto(xjid){
+                    var id = xjid;
+                    var tb = $("#tb_"+id).val();
+                    $.post(
+                        '/archive/photoAppraisal.action',
+                        {'archiveId':id,'tb':tb},
+                        function (html) {
+                            $("#dialog").html(html);
+                            $("#dialog").dialog('option', 'height', 220);
+                            $("#dialog").dialog('option', 'title', '毕业照片评价').dialog('open');
+                            $("#dialog").dialog('option', 'buttons', null);
+                        }
+                    );
+                }
+
+                function prequerymate(count){
+                    var xjId = $('#xjId_'+count).val();
+                    if( $('#mate_'+count).html() == null ){
+                        //$('#mate').find(".mate_style").hide();
+                        loadmatelist(xjId,count);
+                    }else{
+                        $('#mate_'+count).show().siblings(".mate_style").hide();
+                    }
+                }
+                function loadmatelist(xjId,xjId_count){
+                    /*    var count = 8;
+                     $.post(
+                     '/archive/querymates.action',
+                     {'count':count,'xjId':xjId},
+                     function (html) {
+                     $('#mate').append('<div id=mate_'+xjId_count+' class = "mate_style"></div>');
+                     $('#mate_'+xjId_count).show().siblings(".mate_style").hide();
+                     $('#mate_'+xjId_count).html(html);
+                     }
+                     );
+                     */
+                }
+                function closedialog(){
+                    $("#dialog").dialog('close');
+                }
+                function closethis(){
+                    $("#other_school").dialog('close');
+                }
+                function editxjjdxx(xjformid){
+                    var xjxxformid = xjformid;
+                    var ops = {
+                        type:'post',
+                        url:'editxjjdxx.action',
+                        dataType:'html',
+                        success:function(data){
+                            $("#dialog").html(data);
+                            $("#dialog").dialog('option', 'height', 520);
+                            $("#dialog").dialog("option", 'dialogClass', 'button3').dialog('option', 'title', '学籍信息修改意见').dialog('open');
+                        }
+                    };
+                    $("#collate_"+xjxxformid).ajaxSubmit (ops);
+                    $("#dialog").dialog('option', 'buttons', null);
+                }
+                function editzpjdxx(zpformid){
+                    var zpxxformid = zpformid;
+                    $("#collate_"+zpxxformid).find(".zpxxCollateStatus").val("0");
+                    var ops = {
+                        type:'post',
+                        url:'editzpjdxx.action',
+                        dataType:'html',
+                        success:function(data){
+                            $("#dialog").html(data);
+                            $("#dialog").dialog('option', 'height', 355);
+                            $("#dialog").dialog("option", 'dialogClass', 'button3').dialog('option', 'title', '毕业照片错误原因').dialog('open');
+                        }
+                    };
+                    $("#collate_"+zpxxformid).ajaxSubmit (ops);
+                    $("#dialog").dialog('option', 'buttons', null);
+                }
+                function queryxjjdxx(xjformid){
+                    var xjxxformid = xjformid;
+                    var ops = {
+                        type:'post',
+                        url:'queryxjjdxx.action',
+                        dataType:'html',
+                        success:function(data){
+                            $("#dialog").html(data);
+                            $("#dialog").dialog('option', 'height', 520);
+                            $("#dialog").dialog('option', 'width', 625);
+                            $("#dialog").dialog("option", 'dialogClass', 'button3').dialog('option', 'title', '查看学籍信息修改意见').dialog('open');
+                        }
+                    };
+                    $("#collate_"+xjxxformid).ajaxSubmit (ops);
+                    $("#dialog").dialog('option', 'buttons', null);
+                }
+                function queryzpjdxx(zpformid){
+                    var zpxxformid = zpformid;
+                    var ops = {
+                        type:'post',
+                        url:'queryzpjdxx.action',
+                        dataType:'html',
+                        success:function(data){
+                            $("#dialog").html(data);
+                            $("#dialog").dialog('option', 'height', 355);
+                            $("#dialog").dialog("option", 'dialogClass', 'button3').dialog('option', 'title', '查看照片错误原因').dialog('open');
+                        }
+                    };
+                    $("#collate_"+zpxxformid).ajaxSubmit (ops);
+                    $("#dialog").dialog('option', 'buttons', null);
+                }
+                function updatexjinfo(xjformid){
+                    var xjxxformid = xjformid;
+                    $("#dialog").html("<div class='collate_tip01'>提示：学籍信息校对结论将在24小时后正式提交至就读院校学籍管理部门；<br />　　　正式提交前校对结论可以修改；<br />　　　正式提交后若仍需修改，请联系就读院校学籍管理部门。</div><div class='center' style='margin:10px;'><input type='button' class='button4' onclick='updatexjjdxx("+xjxxformid+")' value='确定' />   <input type='button' class='button4' onclick='closedialog()' value='返回' /></div>");
+                    $("#dialog").dialog('option', 'height', 150);
+                    $("#dialog").dialog('option', 'title', '学籍信息完全正确').dialog('open');
+                    $("#dialog").dialog('option', 'buttons', null);
+                }
+                function updatexjjdxx(xjformid){
+                    var xjxxformid = xjformid;
+                    $("#collate_"+xjxxformid).attr('action','updatexjjdxx.action');
+                    $("#collate_"+xjxxformid).submit();
+                }
+                function updatezpinfo(zpformid){
+                    $("#dialog").html("<div class='collate_tip01'>提示：毕业照片校对结论将在24小时后正式提交至就读院校学籍管理部门；<br />　　　正式提交前校对结论可以修改；<br />　　　正式提交后若仍需修改，请联系就读院校学籍管理部门。</div><div class='center' style='margin:10px;'><input type='button' class='button4' onclick='updatezpjdxx("+zpxxformid+")' value='确定' />  <input type='button' class='button4' onclick='closedialog()' value='返回' /></div>");
+                    var zpxxformid = zpformid;
+                    $("#collate_"+zpxxformid).find(".zpxxCollateStatus").val("1");
+                    var ops = {
+                        type:'post',
+                        url:'editzpjdxx.action',
+                        dataType:'html',
+                        success:function(data){
+                            $("#dialog").html(data);
+                            $("#dialog").dialog('option', 'height', 355);
+                            $("#dialog").dialog("option", 'dialogClass', 'button3').dialog('option', 'title', '毕业照片完全正确').dialog('open');
+                        }
+                    };
+                    $("#collate_"+zpxxformid).ajaxSubmit (ops);
+                    $("#dialog").dialog('option', 'buttons', null);
+                }
+                function updatezpjdxx(tb){
+                    var zpxxformid = tb+1;
+                    var trnd = $("#urlTrnd").val();
+                    $("#collate_"+zpxxformid).attr('action','updatezpjdxx.action');
+                    $("#collate_"+zpxxformid).submit();
+                }
+                function  zpjdsxInfo(tbCount){
+                    $("#collate_again_"+tbCount).hide();
+                    $("#zpjdsx_"+tbCount).html("校对结论已生效。");
+                    $("#zpjdsx_"+tbCount).show();
+                    return false;
+                }
+                function ptgxbysjyzkSurvey(votePtgxbysjyzk) {
+                    $.ajax({
+                        url:'/archive/survey/ptgxbysjyzksurvey.action',
+                        type:'POST',
+                        data:{
+                            xjId:votePtgxbysjyzk,
+                            from:'archive-xjxx'
+                        },
+                        success:function(dataValue) {
+                            $("#ptgxbysjyzk_survey").html(dataValue);
+                            resizeRight();
+                        },
+                        error:function(){
+                        }
+                    });
+                }
+            </script>
+            <div id="dialog3" title="请进入学信网网上支付平台付款">
+                <div class="bg_pay_dialog">
+                    <h3>请在新打开的页面上完成付款后选择</h3>
+                    <br />
+                    <a href="xjarchive.action" class="bg_pay_dialog_btn">已完成付款</a><a href="http://pay.chsi.com.cn/help/index.jsp" target="_blank" class="bg_pay_dialog_btn bg_pay_dialog_btn_org">付款遇到问题</a>
+                    <div class="clearFloat"></div>
+
+                </div>
+            </div>
+            <div id="dialog1" title="申请学籍在线验证报告"></div>
+            <div id="dialog" title="申请学籍在线验证报告"></div>
+            <div id="dialog_photo" title="我的照片"></div>
+            <div id="dialog_error_alert" title="系统忙"></div>
+        </div>
+    </div>
+    <div class="clearFloat"></div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="footer">
+    <a href="http://www.chsi.com.cn/" target="_blank">学信网</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="http://www.chsi.com.cn/about/about_site.shtml" target="_blank">网站简介</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="http://www.chsi.com.cn/about/contact.shtml" target="_blank">联系我们</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="http://www.chsi.com.cn/about/contact.shtml" target="_blank">意见反馈</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://account.chsi.com.cn/account/help/index.jsp" target="_blank">帮助中心</a>　 Copyright 2003 -
+    2016&nbsp;&nbsp;学信网&nbsp;&nbsp;京ICP证030485号 </div>
+<div id="loader"></div>
+</body>
+</html>
+<script type="text/javascript">
+    function resizeRight(){
+        $("#leftContBorder").height("");
+        $("#rightContBorder").height("");
+        var heightRight = $("#rightContBorder").height();
+        var heightLeft = $("#leftContBorder").height();
+        if(heightLeft > heightRight){
+            $("#rightContBorder").height(heightLeft);
+        }else{
+            $("#leftContBorder").height(heightRight);
+        }
+    }
+    window.onload = function(){
+        resizeRight();
+    }
+</script>

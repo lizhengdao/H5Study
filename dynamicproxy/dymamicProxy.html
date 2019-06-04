@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="../js/jquery1.4.js"></script>
+    <script type="text/javascript" src="../js/jquery.base64.min.js"></script>
+
+    <script type="text/javascript" src="dynamic.js"></script>
+
+</head>
+<body>
+
+<p id="content">修脚刀特殊服务按倒</p>
+<div id="clickMe">点击1</div>
+<div id="clickMe2">点击2</div>
+<div id="interceptMe">interceptMe</div>
+<div id="interceptMe2">interceptMe2</div>
+
+
+
+</body>
+
+<script type="text/javascript">
+
+    // $('#clickMe2').click(function(){
+    //     alert('这是匿名函数，休想跨作用域追捕');
+    //     alert($('#content').text());
+    // });
+
+    // $('#clickMe2').click(function(){
+    //     $._('fuck_them_up', function(){
+    //         alert('这是匿名函数，休想跨作用域追捕');
+    //         alert($('#content').text());
+    //     });
+    // });
+
+    // function fuck_them_up() {
+    //     console.log("执行fuck_them_up")
+    // }
+
+    function fuckThemUp(s){
+        console.log("fuckThemUp" + s);
+        alert(s);
+    }
+
+    $('#clickMe').click(function(){
+        fuckThemUp($('#content').text());
+    });
+
+    $('#interceptMe').click(function(){
+        $.intercept('fuckThemUp', function(s){
+            console.log("intercept fuckThemUp");
+            alert('河蟹来了!');
+            s = s.replace(/修脚刀/, '水果刀');
+            s = s.replace(/特殊服务/, '异性洗浴服务');
+            s = s.replace(/按倒/, '推坐');
+            this.__invocation__(s);
+        });
+    });
+
+    // $('#clickMe2').click(function(){
+    //     console.log("点击了------------------")
+    //     $._('fuck_them_up', function(){
+    //         alert('这是匿名函数，休想跨作用域追捕');
+    //     });
+    // });
+    //
+    // $('#interceptMe2').click(function(){
+    //     $.intercept('fuck_them_up', function(s){
+    //         alert('还不抓到你?');
+    //     });
+    // });
+
+
+</script>
+</html>

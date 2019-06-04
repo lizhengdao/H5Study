@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A</title>
+</head>
+
+<body>
+
+</body>
+
+<script type="text/javascript">
+
+    console.log("window.name == " + window.name.toString());
+    var src1 = "http://cztx.t.52tfd.com/activity-detail.html?data=8AEBFEF141777F936668D7D56F54C42CAADAE521E2E62E195EB664465205D2A79D51E5241E075CEB212FEB559CA7B2C80EF0F2886CA0DE18C306D759E2095A0B0B1E734914603152A9D068EC5156DD54D099B8F431DCCDB5999B06CF4A9C21853B22F32B29A0FDE7853D37888929C8AAD7224D78F5B5C68A365EBFBAF3D04A0875ADBF5C07C48E58C5971C79FDE87AEE949AA5928874D8305FF695A82A947D63E8208ED74B11F2FC8B38C9741A4B8A308D31DEA1E7D426D89915A8E0B52C4E0E2EF2B08A9F7FA7AB6B63A0488BCAA717F88511C04CA475A04462C446B7D9C3E3A4B18DA105E5AD54EB807B81E245A0FF3EE30EC5546AE27093A3425FD620D2CA247418780C9E42FCAED926D2416C458A031C0059562A55A28966BE89807B3A98D6691525053DE62F653D0DCE36886C9FEFFD339EADCEAE2ABA7EEDAD6EDD5191";
+
+    var boo = false;
+    var iframe = document.createElement('iframe');
+    var loadData = function() {
+        if (boo) {
+            console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            var data = iframe.contentWindow.name;    //获取window.name
+            console.log("iframe.contentWindow.name == " + data);
+            //销毁数据
+            // iframe.contentWindow.document.write('');
+            // iframe.contentWindow.close();
+            // document.body.removeChild(iframe);
+        } else {
+            console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+            console.log("window.name == " + window.name);
+            boo = true;
+            //  iframe.contentWindow.location = "http://cztx.t.52tfd.com/";    // 设置的代理文件,iframe重新载入
+            iframe.from = "http://cztx.t.52tfd.com";
+            iframe.contentWindow.location = src1;
+        }
+    };
+
+    iframe.src = 'https://lizhengdao.github.io/';
+
+    // iframe.src = 'http://cztx.t.52tfd.com/activity-detail.html?data=8AEBFEF141777F936668D7D56F54C42CAADAE521E2E62E195EB664465205D2A79D51E5241E075CEB212FEB559CA7B2C80EF0F2886CA0DE18C306D759E2095A0B0B1E734914603152A9D068EC5156DD54D099B8F431DCCDB5999B06CF4A9C21853B22F32B29A0FDE7853D37888929C8AAD7224D78F5B5C68A365EBFBAF3D04A0875ADBF5C07C48E58C5971C79FDE87AEE949AA5928874D8305FF695A82A947D63E8208ED74B11F2FC8B38C9741A4B8A308D31DEA1E7D426D89915A8E0B52C4E0E2EF2B08A9F7FA7AB6B63A0488BCAA717F88511C04CA475A04462C446B7D9C3E3A4B18DA105E5AD54EB807B81E245A0FF3EE30EC5546AE27093A3425FD620D2CA247418780C9E42FCAED926D2416C458A031C0059562A55A28966BE89807B3A98D6691525053DE62F653D0DCE36886C9FEFFD339EADCEAE2ABA7EEDAD6EDD5191';
+
+
+    if (iframe.attachEvent) {
+        iframe.attachEvent('onload', loadData);
+    } else {
+        iframe.onload  = loadData;
+    }
+    document.body.appendChild(iframe);
+
+
+</script>
+</html>

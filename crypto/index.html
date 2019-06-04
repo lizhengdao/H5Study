@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+
+<HEAD>
+    <TITLE>AES加密解密</TITLE>
+    <META NAME="Generator" CONTENT="EditPlus">
+    <META NAME="Author" CONTENT="">
+    <META NAME="Keywords" CONTENT="">
+    <META NAME="Description" CONTENT="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="jquery1.4.js"></script>
+    <script type="text/javascript" src="crypto-js.js"></script>
+    <script type="text/javascript" src="jquery.base64.min.js"></script>
+</HEAD>
+<script type="text/javascript">
+
+    //  test:   e080de81bcef11e6    online:   bae51da7342311e5
+	var key = CryptoJS.enc.Utf8.parse("bae51da7342311e5");
+
+	var keyTest = CryptoJS.enc.Utf8.parse("e080de81bcef11e6");
+
+	/**
+	 * [encrypt 加密]
+	 * @return {[type]} [description]
+	 */
+	// function encrypt() {
+	//     var content = $("#encryptContent").val();
+    //
+	//     console.log("content", content)
+	//     var encryptResult = CryptoJS.AES.encrypt(content, key, {
+	//         //iv: key,
+	//         mode: CryptoJS.mode.ECB,
+	//         padding: CryptoJS.pad.Pkcs7
+	//     });
+    //
+    //     var encryptedStr = encryptResult.ciphertext.toString().toUpperCase();
+    //
+    //     $("#encryptResult").val(encryptedStr);
+	// }
+
+    function encrypt(isOnline) {
+        // var content = $("#encryptContent").val();
+
+        var content;
+        if (isOnline) {
+            content = $("#encryptContent").val();
+        } else {
+            content = $("#encryptContentTest").val();
+        }
+
+        console.log("content", content)
+        var encryptResult = CryptoJS.AES.encrypt(content, isOnline ? key : keyTest, {
+            //iv: key,
+            mode: CryptoJS.mode.ECB,
+            padding: CryptoJS.pad.Pkcs7
+        });
+
+        var encryptedStr = encryptResult.ciphertext.toString().toUpperCase();
+
+        console.log("加密结果 == " + encryptedStr);
+
+        $("#result").val(encryptedStr);
+
+        // $("#encryptResult").val(encryptedStr);
+
+        $("#encryptResultText").val(encryptedStr);
+
+        if (isOnline) {
+            $("#encryptResult").val(encryptedStr);
+        } else {
+            $("#encryptResultTest").val(encryptedStr);
+        }
+    }
+
+    function encryptOnline() {
+        encrypt(true);
+    }
+
+    function encryptTest() {
+        encrypt(false);
+    }
+
+	/**
+	 * [decrypt 解密]
+	 * @return {[type]} [description]
+	 */
+	// function decrypt() {
+	//     var content = $("#decryptContent").val();
+    //
+	//     // content = "7986063EDC2B1E89283A1BC6DC00879FEE17AEE50D9B7C473BE5E327C608BA14B4607E5A2383C8D241A0FCF5F20B4D59C912052604D9B7410F553EB3AB5B734A4A825F3E2379914B06B8C531C1B4BB2954336BD59F5A11A7847637A90900B3D9DD1D3FE881FDF6AEDE586291B40F613E";
+    //     alert(content);
+    //
+    //     var encryptedHexStr = CryptoJS.enc.Hex.parse(content);
+    //
+    //     var srcs  = CryptoJS.enc.Base64.stringify(encryptedHexStr);
+    //
+    //     //    var bytes = CryptoJS.AES.decrypt(content.toString(), key, {
+	// //        iv: key,
+	// //        mode: CryptoJS.mode.CBC,
+	// //        padding: CryptoJS.pad.Pkcs7
+	// //    });
+	//
+	// 	var bytes = CryptoJS.AES.decrypt(srcs .toString(), key, {
+	//         mode: CryptoJS.mode.ECB,
+	//         padding: CryptoJS.pad.Pkcs7
+	//     });
+    //
+    //
+    //
+    //     alert(bytes);
+	//
+	//     var decryptResult = bytes.toString(CryptoJS.enc.Utf8);
+	//
+	// 	alert(decryptResult.toString());
+	//     $("#decryptResult").val(decryptResult);
+	// }
+
+
+    function decrypt(isOnline) {
+
+        // var content = $("#decryptContent").val();
+
+        var content;
+
+        if (isOnline) {
+            content = $("#decryptContent").val();
+        } else {
+            content = $("#decryptContentTest").val();
+        }
+
+        // content = "7986063EDC2B1E89283A1BC6DC00879FEE17AEE50D9B7C473BE5E327C608BA14B4607E5A2383C8D241A0FCF5F20B4D59C912052604D9B7410F553EB3AB5B734A4A825F3E2379914B06B8C531C1B4BB2954336BD59F5A11A7847637A90900B3D9DD1D3FE881FDF6AEDE586291B40F613E";
+        alert(content);
+
+        var encryptedHexStr = CryptoJS.enc.Hex.parse(content);
+
+        var srcs  = CryptoJS.enc.Base64.stringify(encryptedHexStr);
+
+        //    var bytes = CryptoJS.AES.decrypt(content.toString(), key, {
+        //        iv: key,
+        //        mode: CryptoJS.mode.CBC,
+        //        padding: CryptoJS.pad.Pkcs7
+        //    });
+
+        var bytes = CryptoJS.AES.decrypt(srcs .toString(), isOnline ? key : keyTest, {
+            mode: CryptoJS.mode.ECB,
+            padding: CryptoJS.pad.Pkcs7
+        });
+
+
+
+        alert(bytes);
+
+        var decryptResult = bytes.toString(CryptoJS.enc.Utf8);
+
+        alert(decryptResult.toString());
+
+        console.log("解密结果 == " + decryptResult);
+
+
+        $("#decryptResultText").val(decryptResult);
+
+        $("#result").val(decryptResult);
+
+        if (isOnline) {
+            $("#decryptResult").val(decryptResult);
+        } else {
+            $("#decryptResultTest").val(decryptResult);
+        }
+        // $("#decryptResult").val(decryptResult);
+    }
+
+    function decryptOnline() {
+        decrypt(true);
+    }
+
+    function decryptTest() {
+        decrypt(false);
+    }
+
+
+	function base64Encode() {
+        var content = $("#base64Content").val();
+
+        var base64EncodeResult = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(content))
+        alert(base64EncodeResult);
+
+        $("#base64EncodeResult").val(base64EncodeResult);
+    }
+
+
+</script>
+
+<BODY>
+    加密文本(Online):
+    <input type="text" id="encryptContent" />
+    <input type="button" value="AES加密" onclick="encryptOnline()" />  加密结果:
+    <input type="text" id="encryptResult" />
+    <br/>
+
+    <br/> 解密文本(Online):
+    <input type="text" id="decryptContent" />
+    <input type="button" value="AES解密" onclick="decryptOnline()" />  解密结果:
+    <input type="text" id="decryptResult" />
+    <br/>
+
+    <br/> 加密文本(Test):
+    <input type="text" id="encryptContentTest" />
+    <input type="button" value="AES加密" onclick="encryptTest()" />  加密结果:
+    <input type="text" id="encryptResultTest" />
+    <br/>
+    <br/> 解密文本(Test):
+    <input type="text" id="decryptContentTest" />
+    <input type="button" value="AES解密" onclick="decryptTest()" />  解密结果:
+    <input type="text" id="decryptResultTest" />
+
+    <br/>
+
+
+    <br/> Base64:
+    <input type="text" id="base64Content" />
+    <input type="button" value="Base64编码" onclick="base64Encode()" />  Base64编码结果:
+    <input type="text" id="base64EncodeResult" />
+
+    <br/>
+    <br/>
+    <br/>
+    加密结果
+    <textarea style="width: 100%;height: 200px;color: #333333;margin-top: 0px" id="encryptResultText"></textarea>
+
+    <br/>
+    <br/>
+    <br/>
+    解密结果
+    <textarea style="width: 100%;height: 200px;color: #333333;margin-top: 0px" id="decryptResultText"></textarea>
+
+</BODY>
+
+</HTML>

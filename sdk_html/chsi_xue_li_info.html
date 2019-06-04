@@ -1,0 +1,453 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>学信档案</title>
+    <link rel="icon" href="/archive/favicon.ico" type="image/x-icon" />
+    <link href="http://t1.chei.com.cn/common/jqueryui/1.8.11/themes/south-street/jquery-ui.custom.css" rel="stylesheet" />
+    <link href='/archive/css/theme/normal/theme_new.css' rel="stylesheet" type="text/css" />
+    <link href='http://t3.chei.com.cn/archive/js/statebox/stateBox.css' rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://t1.chei.com.cn/common/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://t1.chei.com.cn/common/jqueryui/1.8.11/jquery-ui.min.js"></script>
+    <script type="text/javascript" src='http://t2.chei.com.cn/archive/js/statebox/stateBox.js'></script>
+
+    <script src="http://t1.chei.com.cn/common/js/boomerang-min-20141211.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        BOOMR.init({
+            beacon_url: "http://www.chsi.com.cn/images/perf.gif",
+            DNS:{
+                base_url: "http://*.chdi.com.cn/images/"
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-100524-5']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+<img src='http://t1.chei.com.cn/common/wap/images/share_xxda.jpg' width='0' height='0' style='position: absolute;top:-100px;left: 0'/>
+<div id="topBar">
+    <div id="topLogo"></div>
+    <div id="menu1">
+        <ul>
+            <li class="onread"><a href="http://my.chsi.com.cn/archive/index.action?trnd=07333623398993172765644749751315">学信档案</a></li>
+            <li><a href="http://gaokao.chsi.com.cn/zyk/zytj/recommendContinue.action?trnd=07333623398993172765644749751315" target="_blank">专业推荐</a></li>
+            <li><a href="http://xz.chsi.com.cn/psn/zybk.action" target="_blank">专业百科</a></li>
+            <li><a href="http://gaokao.chsi.com.cn/zyk/myd/schAppraisalWelcome.action?trnd=07333623398993172765644749751315" target="_blank">院校满意度</a></li>
+            <li><a href="http://www.gfbzb.gov.cn/" target="_blank">征兵报名</a></li>
+            <li id="xzptOn"><a href="/archive/zysurveyindex.action?from=archive-header">职业调查</a></li>
+            <script type="text/javascript">
+                var theHref = document.location.href;
+                if(theHref.indexOf("zycp") != -1 || theHref.indexOf("zysurveyindex") != -1 || theHref.indexOf("zxssurvey") != -1){
+                    $("#xzptOn").addClass("onread").siblings("li").removeClass("onread");
+                }
+            </script>
+
+
+        </ul>
+    </div>
+
+    <div id="menu2" style="width:280px; word-break:break-all; word-wrap:break-word;">欢迎 895156386@qq.com
+
+
+        <a href="https://account.chsi.com.cn/account/account!show" target="_blank">账号</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://account.chsi.com.cn/account/help/index.jsp" target="_blank">帮助</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick='logoutFn(event);' href='https://account.chsi.com.cn/passport/logout'>退出</a>
+        <script type='text/javascript'>
+            function logoutFn(event){
+                var e = event ||window.event;
+                if(!confirm('确定要退出吗？')){
+                    if(e && e.preventDefault) {
+                        e.preventDefault();
+                    } else {
+                        e.returnValue = false;
+                    }
+                    return false;
+                }
+            };
+        </script>
+
+    </div>
+    <div class="clearFloat"></div>
+</div>
+<div id="mainPannel">
+    <div id="leftBG">
+        <div id="leftContBorder">
+
+
+
+
+
+
+
+
+
+
+
+
+            <script type="text/javascript">
+                $(function(){
+                    var requestUrl = "http://my.chsi.com.cn/archive/xlarchive.action";
+                    var contextPath = "http://my.chsi.com.cn/archive";
+                    requestUrl = requestUrl.replace(contextPath,"");
+                    $("#leftList").children("li").each(function(){
+                        var $this = $(this);
+                        var $childA = $this.find("a");
+                        if($childA.length>0) {
+                            var aHref = $childA.attr("href");
+                            if( aHref.indexOf(requestUrl) > 0
+                                || aHref.indexOf(requestUrl.replace("add","")) > 0
+                                || aHref.indexOf(requestUrl.replace("doadd","")) > 0
+                                || aHref.indexOf(requestUrl.replace("bind","")) > 0
+                                || aHref.indexOf(requestUrl.replace("dobind","")) > 0
+                                ||( aHref.indexOf('reportsendhistory')>0 &&(  //NSC
+                                requestUrl.indexOf('selectschoolfileaction')>0
+                                || requestUrl.indexOf('reportsenddetail')>0
+                                || requestUrl.indexOf('saveselectoptionaction')>0
+                                || requestUrl.indexOf('modifytransbatchaction')>0
+                                || requestUrl.indexOf('resendreport') > 0
+                                || requestUrl.indexOf('sendreportaction')>0 ))
+                                ||( aHref.indexOf('viewcollegenetrequestlistaction')>0 &&(//美国大学网
+                                requestUrl.indexOf('viewcollegenetreportaction')>0
+                                ||requestUrl.indexOf('comfirmsendreportaction')>0
+                                ||requestUrl.indexOf('collegenetquestions')>0 ))
+                                ||( aHref.indexOf('/digitary/historylist')>0 &&(  //Digitary
+                                requestUrl.indexOf('digitary')>0))
+                            ){
+
+                                $this.addClass("selected");
+                                return false;
+                            }
+                        }
+                    });
+                });
+            </script>
+
+            <ul id="leftList">
+                <li class='title'><span class="icon_all">&nbsp;</span><a href="/archive/educationinfoaction.action?trnd=99171000256365628962590721755917">高等教育</a> </li>
+                <li><a href="/archive/xjarchive.action?trnd=99171000256365628962590721755917">学籍信息(图像校对)</a></li>
+                <li><a href="/archive/xlarchive.action?trnd=99171000256365628962590721755917">学历信息</a></li>
+                <li><a href="/archive/syjsarchive.action?trnd=99171000256365628962590721755917">考研信息</a></li>
+                <li><a href="/archive/viewemploymentdestination.action">毕业去向</a></li>
+                <li class="line">&nbsp;</li>
+                <li class='title'><span class="icon_all">&nbsp;</span><a href="/archive/onlinereportaction.action?trnd=99171000256365628962590721755917">在线验证报告</a></li>
+                <li><a href="/archive/xjreport.action">高等学籍</a></li>
+                <li><a href="/archive/xlreport.action?trnd=99171000256365628962590721755917">高等学历</a></li>
+                <li class="line">&nbsp;</li>
+                <li class='title'><span class="icon_all">&nbsp;</span><a href="/archive/rzreportindexaction.action?trnd=99171000256365628962590721755917">纸质认证报告</a></li>
+                <li><a href="/archive/xlrzreport.action?trnd=99171000256365628962590721755917">高等学历</a></li>
+                <li><a href="/archive/zxsreport.action?trnd=99171000256365628962590721755917">高等教育成绩单</a></li>
+                <li><a href="/archive/seniorxlrzreport.action?trnd=99171000256365628962590721755917">中等学历</a></li>
+                <li><a href="/archive/gkreport.action?trnd=99171000256365628962590721755917">高考成绩单</a></li>
+                <li><a href="/archive/rzbg/gz/view.action?trnd=99171000256365628962590721755917">中学成绩单</a></li>
+                <li><a href="/archive/rzbg/hk/view.action?trnd=99171000256365628962590721755917">会考成绩单</a></li>
+                <li class="line">&nbsp;</li>
+                <li class='title'><span class="icon_all">&nbsp;</span><a href="/archive/foreigncooperation.action?trnd=99171000256365628962590721755917">国际合作申请</a></li>
+                <li><a href="/archive/viewcollegenetrequestlistaction.action?trnd=99171000256365628962590721755917">美国大学网<br />(ApplyWeb)</a></li>
+                <li><a href="/archive/reportsendhistory.action?trnd=99171000256365628962590721755917">美国学生信息中心<br />(NSC)</a> </li>
+                <li><a href="/archive/digitary/historylist.action?trnd=99171000256365628962590721755917">爱尔兰Digitary</a></li>
+                <li><a href="/archive/duo/historylist.action?trnd=99171000256365628962590721755917">荷兰DUO</a></li>
+                <li><a href="/archive/parchment/historylist.action?trnd=99171000256365628962590721755917">美国Parchment</a></li>
+
+            </ul>
+
+            <br />
+        </div>
+    </div>
+    <div id="rightBG">
+        <div id="rightContBorder">
+
+
+
+
+
+
+
+
+
+            <script type="text/javascript" src='http://t2.chei.com.cn/archive/js/archive/onlinereport-1.0.0.js'></script>
+            <script type="text/javascript">
+                function initDataInfo(dataK, dataV) {
+                    $(document).data(dataK, dataV);
+                }
+            </script>
+            <div class="locationDiv">
+                <a href="/archive/educationinfoaction.action?trnd=22139749970995065452720641753505">高等教育</a>&nbsp;>&nbsp;
+                <span class="lctSubMenu">
+		[<a href="#" onclick="bindxlreport();return false;" class="color5">我还有学历没显示出来</a>]
+	</span>学历信息
+                <span style='color:red;float: right;margin-right: 20px;'>重要告知：系统正在升级改造，1991-2001年所有学历暂不提供查询服务。</span>
+            </div>
+            <div id="zxyzCont" style="width:740px; margin:0 auto;">
+
+                <div><!--tab效果的容器-->
+                    <div id="tabs">
+
+                        <ul class="tab_1">
+
+
+                            <li><a href="#tabs-1"><span>本科-成都理工大学</span></a></li>
+
+
+
+                        </ul>
+                        <div class="clearFloat">&nbsp;</div>
+
+
+                        <div id="tabs-1" class="tabsDiv">
+
+
+
+                            <div id="resultTable">
+                                <table width="740" border="0" cellpadding="5" cellspacing="1" class="xjxlTable">
+                                    <col width="110" />
+                                    <col width="190" />
+                                    <col width="110" />
+                                    <col width="190" />
+                                    <col width="120" />
+                                    <tr>
+                                        <th>姓名：</th>
+                                        <td colspan="3">李政道</td>
+                                        <td rowspan="7" valign="top" class="alignCenter"><img src="/archive/viewphoto.action?trnd=22139749970995065452720641753505&type=xl&dtid=9j7dmx3dyheqaq8m" width="110" /></td>
+                                    </tr>
+                                    <tr>
+                                        <th>性别：</th>
+                                        <td>男</td>
+                                        <th>出生日期：</th>
+                                        <td>1987年5月17日</td>
+                                    </tr>
+                                    <tr>
+                                        <th>入学时间：</th>
+                                        <td>2007年9月1日</td>
+                                        <th>毕业时间：</th>
+                                        <td>2011年6月20日</td>
+                                    </tr>
+                                    <tr>
+                                        <th>学历类别：</th>
+                                        <td class="data-s2 dks2-9j7dmx3dyheqaq8m-s3">普通</td>
+                                        <th>学历层次：</th>
+                                        <td class="data-s2 dks2-9j7dmx3dyheqaq8m-s4">本科</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>毕业院校：</th>
+                                        <td class="data-s2 dks2-9j7dmx3dyheqaq8m-s1">成都理工大学</td>
+                                        <th>院校所在地：</th>
+                                        <td>四川省</td>
+                                    </tr>
+                                    <tr>
+                                        <th>专业名称：</th>
+                                        <td class="data-s2 dks2-9j7dmx3dyheqaq8m-s2">计算机科学与技术</td>
+                                        <th>学习形式：</th>
+                                        <td class="data-s2 dks2-9j7dmx3dyheqaq8m-s6">普通全日制</td>
+                                    </tr>
+                                    <tr>
+                                        <th>证书编号：</th>
+                                        <td class="data-s2 dks2-9j7dmx3dyheqaq8m-s5">1061 6120 1105 0023 78</td>
+                                        <th>毕结业结论：</th>
+                                        <td>毕业</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="alignCenter">
+                                <a href="/archive/printxlarchive.action?id=9j7dmx3dyheqaq8m&trnd=22139749970995065452720641753505" target="_blank" class="buttonA">打印学历信息</a>&nbsp;
+
+                                <a href="#" class="buttonA" onclick="gochoosepay('9j7dmx3dyheqaq8m','xlarchive.action?tb=0');return false;">申请该学历电子注册备案表</a>&nbsp;
+
+                                <a href="http://www.chsi.com.cn/xlcx/bgys.jsp" target="_blank" class="colorBlueLine">什么是学历电子注册备案表</a>
+
+
+                            </div>
+
+
+
+
+
+                        </div>
+                        <script type="text/javascript">
+                            //initDataInfo("dks2-9j7dmx3dyheqaq8m"+"-s1", "成都理工大学");
+                            //initDataInfo("dks2-9j7dmx3dyheqaq8m"+"-s2", "计算机科学与技术");
+                            //initDataInfo("dks2-9j7dmx3dyheqaq8m"+"-s3", "普通");
+                            //initDataInfo("dks2-9j7dmx3dyheqaq8m"+"-s4", "本科");
+                            //initDataInfo("dks2-9j7dmx3dyheqaq8m"+"-s5", "1061 6120 1105 0023 78");
+                            //initDataInfo("dks2-9j7dmx3dyheqaq8m"+"-s6", "普通全日制");
+                        </script>
+
+                    </div>
+                </div><!-- tab效果容器的结束 -->
+                <div class="take_care">
+                    说明：2002年以来取得各类国家承认高等教育学历的毕业生，可以免费查询本人的学历信息。
+                    信息项中用*号代表的，表示当前尚无该项的学历信息。如信息有误，请联系毕业院校学籍学历管理部门。
+                </div>
+
+
+            </div>
+            <script type="text/javascript">
+
+                $(function() {
+                    // tabs
+                    var tb = 0;
+                    var countSize = $('.tabsDiv').size();
+                    if( tb >= countSize ){
+                        tb = 0;
+                    }
+                    $('.tab_1').children().eq(tb).addClass('selected').siblings('li').removeClass('selected');
+                    $('#tabs').children('.tabsDiv').eq(tb).show().siblings('.tabsDiv').hide();
+
+                    $('.tab_1 a').click(function(){
+                        $(this).parent('li').addClass('selected').siblings('li').removeClass('selected');
+                        $($(this).attr('href')).show().siblings('.tabsDiv').hide();
+                        resizeRight();
+                        return false;
+                    });
+
+                    //button
+                    $(".buttonA").button();
+                });
+
+
+                $(document).ready(function(){
+                    $("#dialog1").dialog({
+                        bgiframe: false,
+                        autoOpen: false,
+                        width: 600,
+                        height: 310,
+                        modal: true
+                    });
+                    $( "#dialog3" ).dialog({
+                        autoOpen: false,
+                        width:400,
+                        height:200,
+                        modal: true
+                    });
+
+                    $(".data-s2").each(function(){
+                        var classValuesArr = $(this).attr("class").split(" ");
+                        //$(this).html($(document).data(classValuesArr[1]));
+                        $(this).removeClass(classValuesArr[1]);
+                        $(this).removeClass(classValuesArr[0]);
+                    });
+                });
+
+
+
+                function gochoosepay(id, d){
+                    $.ajax({
+                        type:'GET',
+                        data:{
+                            id:function(){
+                                return id;
+                            },
+                            destination:function(){
+                                return d;
+                            }
+                        },
+                        url:'xlonlinereport!chooseXlPay',
+                        dataType:'html',
+                        success:function(data){
+                            $("#dialog1").html(data);
+                            $("#dialog1").dialog('option', 'height', 310)
+                                .dialog('option','position',['cneter',100])
+                                .dialog('option', 'title', '申请学历电子注册备案表').dialog('open');
+                        }
+                    });
+                }
+
+                function gochoosepayofprolong(id, d){
+                    $.ajax({
+                        type:'GET',
+                        data:{
+                            id:function(){
+                                return id;
+                            },
+                            destination:function(){
+                                return d;
+                            }
+                        },
+                        url:'xlonlinereport!chooseXlPayofProlong',
+                        dataType:'html',
+                        success:function(data){
+                            $("#dialog1").html(data);
+                            $("#dialog1").dialog('option', 'height', 310)
+                                .dialog('option','position',['cneter',100])
+                                .dialog('option', 'title', '延长学历电子注册备案表有效期').dialog('open');
+                        }
+                    });
+                }
+            </script>
+            <div id="dialog1" title="申请学历电子注册备案表"></div>
+            <div id="dialog" title="申请学历电子注册备案表"></div>
+            <div id="dialog_error_alert" title="系统忙"></div>
+            <div id="dialog3" title="请进入学信网网上支付平台付款">
+                <div class="bg_pay_dialog">
+                    <h3>请在新打开的页面上完成付款后选择</h3>
+                    <br />
+                    <a href="xlarchive.action" class="bg_pay_dialog_btn">已完成付款</a><a href="http://pay.chsi.com.cn/help/index.jsp" target="_blank" class="bg_pay_dialog_btn bg_pay_dialog_btn_org">付款遇到问题</a>
+                    <div class="clearFloat"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearFloat"></div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="footer">
+    <a href="http://www.chsi.com.cn/" target="_blank">学信网</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="http://www.chsi.com.cn/about/about_site.shtml" target="_blank">网站简介</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="http://www.chsi.com.cn/about/contact.shtml" target="_blank">联系我们</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="http://www.chsi.com.cn/about/contact.shtml" target="_blank">意见反馈</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://account.chsi.com.cn/account/help/index.jsp" target="_blank">帮助中心</a>　 Copyright 2003 -
+    2016&nbsp;&nbsp;学信网&nbsp;&nbsp;京ICP证030485号 </div>
+<div id="loader"></div>
+</body>
+</html>
+<script type="text/javascript">
+    function resizeRight(){
+        $("#leftContBorder").height("");
+        $("#rightContBorder").height("");
+        var heightRight = $("#rightContBorder").height();
+        var heightLeft = $("#leftContBorder").height();
+        if(heightLeft > heightRight){
+            $("#rightContBorder").height(heightLeft);
+        }else{
+            $("#leftContBorder").height(heightRight);
+        }
+    }
+    window.onload = function(){
+        resizeRight();
+    }
+</script>

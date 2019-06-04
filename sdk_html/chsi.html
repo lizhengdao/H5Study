@@ -1,0 +1,745 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>登录成功</title>
+    <link href="https://t1.chei.com.cn/common/jqueryui/1.8.11/themes/south-street/jquery-ui.custom.css" rel="stylesheet" />
+    <style type="text/css">
+        .chsi_index_normal {
+            z-index: 0;
+            color: blue
+        }
+        .chsi_index_top {
+            z-index: 1000;
+            color: red
+        }
+    </style>
+    <link rel="icon" href="https://t1.chei.com.cn/account/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="https://t1.chei.com.cn/account/css/theme/normal/theme-1.1.4.css"/>
+    <script type="text/javascript" src="https://t1.chei.com.cn/common/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://t1.chei.com.cn/common/jqueryui/1.8.11/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://t3.chei.com.cn/account/js/account/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://t4.chei.com.cn/account/js/account/jqueryloading-1.0.3.js"></script>
+    <script src="https://t1.chei.com.cn/common/js/boomerang-min-20141211.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        BOOMR.init({
+            beacon_url: "https://www.chsi.com.cn/images/perf.gif",
+            DNS:{
+                base_url: "http://*.chdi.com.cn/images/"
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-100524-4']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+<body>
+<div style="text-align:center;margin:0 auto;">
+    <div id="topBar">
+        <div id="topLogo"></div>
+        <div id="menu2" style='width:500px'>
+            <a href="https://account.chsi.com.cn/account/account!show" target='_blank'>欢迎 895156386@qq.com</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="/account/accountroadmap.action" target='_blank'>首页</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://account.chsi.com.cn/account/help/index.jsp" target="_blank">帮助</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://account.chsi.com.cn/passport/logout" onclick='logoutFn(event);'>退出</a>
+            <script type='text/javascript'>
+                function logoutFn(event){
+                    var e = event ||window.event;
+                    if(!confirm('确定要退出吗？')){
+                        if(e && e.preventDefault) {
+                            e.preventDefault();
+                        } else {
+                            e.returnValue = false;
+                        }
+                        return false;
+                    }
+                };
+            </script>
+
+
+
+        </div>
+        <div class="clearFloat"></div>
+
+    </div>
+
+
+</div>
+<div style="text-align:left;margin:0 auto;">
+    <style type="text/css">
+        .blockBox {
+            padding: 40px 0 0 36px;
+            width: 114px;
+            float: left;
+            display: inline;
+            text-align: center;
+        }
+        .blockBox h3 {
+            font-size: 16px;
+            height: 40px;
+            line-height: 40px;
+            margin-top: 5px;
+        }
+        .h3On {
+            color: #1e922f;
+        }
+        .blockBox span.icon {
+            width: 74px;
+            height: 74px;
+            background: url("https://t2.chei.com.cn/account/images/theme/normal/index-icon.png") no-repeat -74px 0;
+            display: block;
+            margin: 0 auto;
+        }
+        .blockBox span.icon_xxda {
+            background-position: -74px 0;
+        }
+        .blockBox span.icon_jydc {
+            background-position: -74px -74px;
+        }
+        .blockBox span.icon_zbbm {
+            background-position: -74px -148px;
+        }
+        .blockBox span.icon_zytj {
+            background-position: -74px -222px;
+        }
+        .blockBox span.icon_yxmyd {
+            background-position: -74px -296px;
+        }
+        .blockBox span.icon_zymyd {
+            background-position: -74px -370px;
+        }
+        .blockBox span.icon_yz{
+            background-position: -74px -444px;
+        }
+        .blockBox span.icon_zzzs{
+            background-position: -74px -518px;
+        }
+        .blockBox span.icon_gatyz{
+            background-position: -74px -592px;
+        }
+        .blockBox span.icon_xxda_on {
+            background-position: 0 0;
+        }
+        .blockBox span.icon_jydc_on {
+            background-position: 0 -74px;
+        }
+        .blockBox span.icon_zbbm_on {
+            background-position: 0 -148px;
+        }
+        .blockBox span.icon_zytj_on {
+            background-position: 0 -222px;
+        }
+        .blockBox span.icon_yxmyd_on {
+            background-position: 0 -296px;
+        }
+        .blockBox span.icon_zymyd_on {
+            background-position: 0 -370px;
+        }
+        .blockBox span.icon_yz_on{
+            background-position: 0 -444px;
+        }
+        .blockBox span.icon_zzzs_on{
+            background-position: 0 -518px;
+        }
+        .blockBox span.icon_gatyz_on{
+            background-position: 0 -592px;
+        }
+        a.aBtn, a.aBtn:link, a.aBtn:visited {
+            background: #59bb66;
+            color: #FFFFFF;
+            display: block;
+            width: 80px;
+            height: 28px;
+            line-height: 28px;
+            border-radius: 4px;
+            margin: 0 auto;
+        }
+        a.aBtn:hover {
+            background: #1e922f;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+    </style>
+    <div id="regMainPannel">
+        <div id="regleftBG">
+            <div class="regleftCont" id='regleftCont' sid='5'>
+                <ul id="leftList" class='leftList'>
+                    <li class='title'>
+                        <span class="icon_all">&nbsp;</span>
+                        <a href="/account/accountroadmap.action">首页</a>
+                    </li>
+                    <li class="line">&nbsp;</li>
+                    <li class='title'>
+                        <span class="icon_all">&nbsp;</span>账号管理
+                    </li>
+                    <li>
+                        <a href="https://account.chsi.com.cn/account/account!show">基本信息</a>
+                    </li>
+                    <li>
+                        <a href="https://account.chsi.com.cn/account/account!editpwdanswer">设置密保问题</a>
+                    </li>
+                    <li class='title'>
+                        <span class="icon_all">&nbsp;</span>绑定实名信息
+                    </li>
+                    <li>
+                        <a href="https://account.chsi.com.cn/account/addpersonalinfo.action">绑定身份证</a>
+                    </li>
+                    <li>
+                        <a href="https://account.chsi.com.cn/account/prebindbyemail.action">绑定邮箱</a>
+                    </li>
+                    <li>
+                        <a href="https://account.chsi.com.cn/account/modifymobilephone.action">绑定手机</a>
+                    </li>
+                    <li class='title'>
+                        <span class="icon_all">&nbsp;</span>日志信息
+                    </li>
+                    <li>
+                        <a href="https://account.chsi.com.cn/account/prequeryloginlog.action">登录日志</a>
+                    </li>
+                    <li class="line">&nbsp;</li>
+                    <li>
+                        <a href='http://www.chsi.com.cn' target='_blank' style='color: #1e922f;font-size: 14px;font-weight: bold;'>学信网</a>
+                    </li>
+                    <li>
+                        <a href='http://yz.chsi.com.cn/user/' target='_blank' style='color: #1e922f;font-size: 14px;font-weight: bold;'>研究生招生</a>
+                    </li>
+                    <li>
+                        <a href='http://my.chsi.com.cn/archive/index.action' target='_blank' style='color: #1e922f;font-size: 14px;font-weight: bold;'>学信档案</a>
+                    </li>
+                    <li>
+                        <a href='http://www.gfbzb.gov.cn' target='_blank' style='color: #1e922f;font-size: 14px;font-weight: bold;'>全国征兵网</a>
+                    </li>
+                    <li>
+                        <a href='https://gaokao.chsi.com.cn/zzbm/' target='_blank' style='color: #1e922f;font-size: 14px;font-weight: bold;'>特殊类招生报名</a>
+                    </li>
+                    <li>
+                        <a href='http://www.gatzs.com.cn/yzbm/student/' target='_blank' style='color: #1e922f;font-size: 14px;font-weight: bold;'>港澳台研招报名</a>
+                    </li>
+
+                </ul>
+                <!--end left-->
+            </div>
+
+        </div>
+        <div id="regrightBG">
+            <div class="regrightCont">
+                <div id="rightMainAll" style="padding:3px 0 2px 0;">
+                    <div class="blockBox">
+                        <a href="http://my.chsi.com.cn/archive/index.action?trnd=78980848010662968277274182493675" title="学信档案">
+                            <span class="icon icon_xxda"></span>
+                        </a>
+                        <h3>学信档案</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://yz.chsi.com.cn/user/" target="_blank" title='研究生招生'>
+                            <span class="icon icon_yz"></span>
+                        </a>
+                        <h3>研究生招生</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://www.gfbzb.gov.cn/" target="_blank" title="全国征兵网">
+                            <span class="icon icon_zbbm"></span>
+                        </a>
+                        <h3>全国征兵网</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://gaokao.chsi.com.cn/zyk/zytj/recommendContinue.action?trnd=78980848010662968277274182493675" target="_blank" title="专业推荐">
+                            <span class="icon icon_zytj"></span>
+                        </a>
+                        <h3>专业推荐</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://gaokao.chsi.com.cn/zyk/myd/schAppraisalWelcome.action?trnd=78980848010662968277274182493675" target="_blank" title="院校满意度">
+                            <span class="icon icon_yxmyd"></span>
+                        </a>
+                        <h3>院校满意度</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://gaokao.chsi.com.cn/zyk/myd/specAppraisalWelcome.action?trnd=78980848010662968277274182493675" target="_blank" title='专业满意度'>
+                            <span class="icon icon_zymyd"></span>
+                        </a>
+                        <h3>专业满意度</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://my.chsi.com.cn/archive/jobSurvey!index.action?trnd=78980848010662968277274182493675" title='就业状况调查'>
+                            <span class="icon icon_jydc"></span>
+                        </a>
+                        <h3>就业状况调查</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://gaokao.chsi.com.cn/zzbm/stu/?trnd=78980848010662968277274182493675" title='自主招生报名'>
+                            <span class="icon icon_zzzs"></span>
+                        </a>
+                        <h3>自主招生报名</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://www.gatzs.com.cn/yzbm/student/?trnd=78980848010662968277274182493675" title='港澳台研招报名'>
+                            <span class="icon icon_gatyz"></span>
+                        </a>
+                        <h3>港澳台研招报名</h3>
+
+                    </div>
+                    <div class="clearFloat"></div>
+                    <!--end rightMain-->
+                </div>
+                <!--end right-->
+            </div>
+
+        </div>
+        <div class="clearFloat"></div>
+
+    </div>
+    <script type="text/javascript">
+        $(function(){
+            $('.blockBox').mouseover(function(){
+                var sClass1 = $(this).find('.icon').attr('class').toString() + '_on';
+                $(this).find('.icon').attr('class',sClass1);
+                $(this).find('h3').addClass('h3On');
+            });
+            $('.blockBox').mouseout(function(){
+                var sClass = $(this).find('.icon').attr('class').toString();
+                var sClass2 = sClass.slice(0,sClass.length-3);
+                $(this).find('.icon').attr('class',sClass2);
+                $(this).find('h3').removeClass('h3On');
+            });
+        })
+    </script>
+
+</div>
+<div id="grid-example1"></div>
+<div class="footerDiv">
+    <div id="footer">Copyright 2003-2016　　
+        <a href="http://www.chsi.com.cn/" target="_blank">学信网</a>　　京ICP证030485号
+    </div>
+
+</div>
+
+</body>
+
+</html>
+<script type="text/javascript">
+    $(function(){
+        resizeH();
+    });
+    function resizeH(){
+        $("#rightMainAll").height("");
+        $("#regleftBG").height("");
+        $(".regleftCont").height("");
+        var leftH = $("#regleftBG").height();
+        var rightH = $("#rightMainAll").height() + 14;
+        var iH = 300;
+        if(leftH < iH && rightH < iH){
+            $("#regleftBG").height(iH);
+            $(".regleftCont").height(iH-3);
+            $("#rightMainAll").height(iH-17);
+        }else{
+            if(leftH > rightH){
+                $("#rightMainAll").height(leftH-17);
+            } else {
+                $("#regleftBG").height(rightH + 3);
+                $(".regleftCont").height(rightH + 1);
+            }
+        }
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>登录成功</title>
+    <link href="https://t1.chei.com.cn/common/jqueryui/1.8.11/themes/south-street/jquery-ui.custom.css" rel="stylesheet" />
+    <style type="text/css">
+        .chsi_index_normal {
+            z-index: 0;
+            color: blue
+        }
+        .chsi_index_top {
+            z-index: 1000;
+            color: red
+        }
+    </style>
+    <link rel="icon" href="https://t1.chei.com.cn/account/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="https://t1.chei.com.cn/account/css/theme/normal/theme-1.1.4.css"/>
+    <script type="text/javascript" src="https://t1.chei.com.cn/common/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://t1.chei.com.cn/common/jqueryui/1.8.11/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://t3.chei.com.cn/account/js/account/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://t4.chei.com.cn/account/js/account/jqueryloading-1.0.3.js"></script>
+    <script src="https://t1.chei.com.cn/common/js/boomerang-min-20141211.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        BOOMR.init({
+            beacon_url: "https://www.chsi.com.cn/images/perf.gif",
+            DNS:{
+                base_url: "http://*.chdi.com.cn/images/"
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-100524-4']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+<body>
+<div style="text-align:center;margin:0 auto;">
+    <div id="topBar">
+        <div id="topLogo"></div>
+        <div id="menu2" style='width:500px'>
+            <a href="https://account.chsi.com.cn/account/account!show" target='_blank'>欢迎 895156386@qq.com</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="/account/accountroadmap.action" target='_blank'>首页</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://account.chsi.com.cn/account/help/index.jsp" target="_blank">帮助</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://account.chsi.com.cn/passport/logout" onclick='logoutFn(event);'>退出</a>
+            <script type='text/javascript'>
+                function logoutFn(event){
+                    var e = event ||window.event;
+                    if(!confirm('确定要退出吗？')){
+                        if(e && e.preventDefault) {
+                            e.preventDefault();
+                        } else {
+                            e.returnValue = false;
+                        }
+                        return false;
+                    }
+                };
+            </script>
+
+
+
+        </div>
+        <div class="clearFloat"></div>
+
+    </div>
+
+
+</div>
+<div style="text-align:left;margin:0 auto;">
+    <style type="text/css">
+        .blockBox {
+            padding: 40px 0 0 36px;
+            width: 114px;
+            float: left;
+            display: inline;
+            text-align: center;
+        }
+        .blockBox h3 {
+            font-size: 16px;
+            height: 40px;
+            line-height: 40px;
+            margin-top: 5px;
+        }
+        .h3On {
+            color: #1e922f;
+        }
+        .blockBox span.icon {
+            width: 74px;
+            height: 74px;
+            background: url("https://t2.chei.com.cn/account/images/theme/normal/index-icon.png") no-repeat -74px 0;
+            display: block;
+            margin: 0 auto;
+        }
+        .blockBox span.icon_xxda {
+            background-position: -74px 0;
+        }
+        .blockBox span.icon_jydc {
+            background-position: -74px -74px;
+        }
+        .blockBox span.icon_zbbm {
+            background-position: -74px -148px;
+        }
+        .blockBox span.icon_zytj {
+            background-position: -74px -222px;
+        }
+        .blockBox span.icon_yxmyd {
+            background-position: -74px -296px;
+        }
+        .blockBox span.icon_zymyd {
+            background-position: -74px -370px;
+        }
+        .blockBox span.icon_yz{
+            background-position: -74px -444px;
+        }
+        .blockBox span.icon_zzzs{
+            background-position: -74px -518px;
+        }
+        .blockBox span.icon_gatyz{
+            background-position: -74px -592px;
+        }
+        .blockBox span.icon_xxda_on {
+            background-position: 0 0;
+        }
+        .blockBox span.icon_jydc_on {
+            background-position: 0 -74px;
+        }
+        .blockBox span.icon_zbbm_on {
+            background-position: 0 -148px;
+        }
+        .blockBox span.icon_zytj_on {
+            background-position: 0 -222px;
+        }
+        .blockBox span.icon_yxmyd_on {
+            background-position: 0 -296px;
+        }
+        .blockBox span.icon_zymyd_on {
+            background-position: 0 -370px;
+        }
+        .blockBox span.icon_yz_on{
+            background-position: 0 -444px;
+        }
+        .blockBox span.icon_zzzs_on{
+            background-position: 0 -518px;
+        }
+        .blockBox span.icon_gatyz_on{
+            background-position: 0 -592px;
+        }
+        a.aBtn, a.aBtn:link, a.aBtn:visited {
+            background: #59bb66;
+            color: #FFFFFF;
+            display: block;
+            width: 80px;
+            height: 28px;
+            line-height: 28px;
+            border-radius: 4px;
+            margin: 0 auto;
+        }
+        a.aBtn:hover {
+            background: #1e922f;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+    </style>
+    <div id="regMainPannel">
+        <div id="regleftBG">
+            <div class="regleftCont" id='regleftCont' sid='5'>
+                <ul id="leftList" class='leftList'>
+                    <li class='title'>
+                        <span class="icon_all">&nbsp;</span>
+                        <a href="/account/accountroadmap.action">首页</a>
+                    </li>
+                    <li class="line">&nbsp;</li>
+                    <li class='title'>
+                        <span class="icon_all">&nbsp;</span>账号管理
+                    </li>
+                    <li>
+                        <a href="https://account.chsi.com.cn/account/account!show">基本信息</a>
+                    </li>
+                    <li>
+                        <a href="https://account.chsi.com.cn/account/account!editpwdanswer">设置密保问题</a>
+                    </li>
+                    <li class='title'>
+                        <span class="icon_all">&nbsp;</span>绑定实名信息
+                    </li>
+                    <li>
+                        <a href="https://account.chsi.com.cn/account/addpersonalinfo.action">绑定身份证</a>
+                    </li>
+                    <li>
+                        <a href="https://account.chsi.com.cn/account/prebindbyemail.action">绑定邮箱</a>
+                    </li>
+                    <li>
+                        <a href="https://account.chsi.com.cn/account/modifymobilephone.action">绑定手机</a>
+                    </li>
+                    <li class='title'>
+                        <span class="icon_all">&nbsp;</span>日志信息
+                    </li>
+                    <li>
+                        <a href="https://account.chsi.com.cn/account/prequeryloginlog.action">登录日志</a>
+                    </li>
+                    <li class="line">&nbsp;</li>
+                    <li>
+                        <a href='http://www.chsi.com.cn' target='_blank' style='color: #1e922f;font-size: 14px;font-weight: bold;'>学信网</a>
+                    </li>
+                    <li>
+                        <a href='http://yz.chsi.com.cn/user/' target='_blank' style='color: #1e922f;font-size: 14px;font-weight: bold;'>研究生招生</a>
+                    </li>
+                    <li>
+                        <a href='http://my.chsi.com.cn/archive/index.action' target='_blank' style='color: #1e922f;font-size: 14px;font-weight: bold;'>学信档案</a>
+                    </li>
+                    <li>
+                        <a href='http://www.gfbzb.gov.cn' target='_blank' style='color: #1e922f;font-size: 14px;font-weight: bold;'>全国征兵网</a>
+                    </li>
+                    <li>
+                        <a href='https://gaokao.chsi.com.cn/zzbm/' target='_blank' style='color: #1e922f;font-size: 14px;font-weight: bold;'>特殊类招生报名</a>
+                    </li>
+                    <li>
+                        <a href='http://www.gatzs.com.cn/yzbm/student/' target='_blank' style='color: #1e922f;font-size: 14px;font-weight: bold;'>港澳台研招报名</a>
+                    </li>
+
+                </ul>
+                <!--end left-->
+            </div>
+
+        </div>
+        <div id="regrightBG">
+            <div class="regrightCont">
+                <div id="rightMainAll" style="padding:3px 0 2px 0;">
+                    <div class="blockBox">
+                        <a href="http://my.chsi.com.cn/archive/index.action?trnd=78980848010662968277274182493675" title="学信档案">
+                            <span class="icon icon_xxda"></span>
+                        </a>
+                        <h3>学信档案</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://yz.chsi.com.cn/user/" target="_blank" title='研究生招生'>
+                            <span class="icon icon_yz"></span>
+                        </a>
+                        <h3>研究生招生</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://www.gfbzb.gov.cn/" target="_blank" title="全国征兵网">
+                            <span class="icon icon_zbbm"></span>
+                        </a>
+                        <h3>全国征兵网</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://gaokao.chsi.com.cn/zyk/zytj/recommendContinue.action?trnd=78980848010662968277274182493675" target="_blank" title="专业推荐">
+                            <span class="icon icon_zytj"></span>
+                        </a>
+                        <h3>专业推荐</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://gaokao.chsi.com.cn/zyk/myd/schAppraisalWelcome.action?trnd=78980848010662968277274182493675" target="_blank" title="院校满意度">
+                            <span class="icon icon_yxmyd"></span>
+                        </a>
+                        <h3>院校满意度</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://gaokao.chsi.com.cn/zyk/myd/specAppraisalWelcome.action?trnd=78980848010662968277274182493675" target="_blank" title='专业满意度'>
+                            <span class="icon icon_zymyd"></span>
+                        </a>
+                        <h3>专业满意度</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://my.chsi.com.cn/archive/jobSurvey!index.action?trnd=78980848010662968277274182493675" title='就业状况调查'>
+                            <span class="icon icon_jydc"></span>
+                        </a>
+                        <h3>就业状况调查</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://gaokao.chsi.com.cn/zzbm/stu/?trnd=78980848010662968277274182493675" title='自主招生报名'>
+                            <span class="icon icon_zzzs"></span>
+                        </a>
+                        <h3>自主招生报名</h3>
+
+                    </div>
+                    <div class="blockBox">
+                        <a href="http://www.gatzs.com.cn/yzbm/student/?trnd=78980848010662968277274182493675" title='港澳台研招报名'>
+                            <span class="icon icon_gatyz"></span>
+                        </a>
+                        <h3>港澳台研招报名</h3>
+
+                    </div>
+                    <div class="clearFloat"></div>
+                    <!--end rightMain-->
+                </div>
+                <!--end right-->
+            </div>
+
+        </div>
+        <div class="clearFloat"></div>
+
+    </div>
+    <script type="text/javascript">
+        $(function(){
+            $('.blockBox').mouseover(function(){
+                var sClass1 = $(this).find('.icon').attr('class').toString() + '_on';
+                $(this).find('.icon').attr('class',sClass1);
+                $(this).find('h3').addClass('h3On');
+            });
+            $('.blockBox').mouseout(function(){
+                var sClass = $(this).find('.icon').attr('class').toString();
+                var sClass2 = sClass.slice(0,sClass.length-3);
+                $(this).find('.icon').attr('class',sClass2);
+                $(this).find('h3').removeClass('h3On');
+            });
+        })
+    </script>
+
+</div>
+<div id="grid-example1"></div>
+<div class="footerDiv">
+    <div id="footer">Copyright 2003-2016　　
+        <a href="http://www.chsi.com.cn/" target="_blank">学信网</a>　　京ICP证030485号
+    </div>
+
+</div>
+
+</body>
+
+</html>
+<script type="text/javascript">
+    $(function(){
+        resizeH();
+    });
+    function resizeH(){
+        $("#rightMainAll").height("");
+        $("#regleftBG").height("");
+        $(".regleftCont").height("");
+        var leftH = $("#regleftBG").height();
+        var rightH = $("#rightMainAll").height() + 14;
+        var iH = 300;
+        if(leftH < iH && rightH < iH){
+            $("#regleftBG").height(iH);
+            $(".regleftCont").height(iH-3);
+            $("#rightMainAll").height(iH-17);
+        }else{
+            if(leftH > rightH){
+                $("#rightMainAll").height(leftH-17);
+            } else {
+                $("#regleftBG").height(rightH + 3);
+                $(".regleftCont").height(rightH + 1);
+            }
+        }
+    }
+
+</script>
