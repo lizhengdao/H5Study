@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height:100%;
+        }
+
+        /*.wrapper{*/
+            /*width: 100%;*/
+            /*height: 100%;*/
+            /*border: 1px solid #000;*/
+            /*display: grid;*/
+            /*grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;*/
+        /*}*/
+
+        /*.wrapper div:nth-child(1) {*/
+
+            /*background-color: #1e922f;*/
+            /*grid-area: 2/2/3/3;*/
+        /*}*/
+        /*.wrapper div:nth-child(2) {*/
+
+            /*background-color: #29bbcf;*/
+            /*grid-area: 1 / 3 / 3 / 4;*/
+        /*}*/
+        /*.wrapper div:nth-child(3) {*/
+
+            /*background-color: #ff4400;*/
+            /*grid-area: 1 / 1 / 2 /3;*/
+        /*}*/
+        /*.wrapper div:nth-child(4) {*/
+
+            /*background-color: #ffcccc;*/
+            /*grid-area: 2 / 1 / 4 /2;*/
+        /*}*/
+        /*.wrapper div:nth-child(5) {*/
+
+            /*background-color: coral;*/
+            /*!*grid-area: 3 / 2 / 4 /4;*!*/
+            /*grid-area: 3 / 2 / span 1 / span 2;*/
+
+        /*}*/
+
+        .wrapper{
+            width: 100%;
+            height: 100%;
+            border: 1px solid #000;
+            display: grid;
+            overflow: hidden;
+            grid-template: "header header"  60px
+                            "left content"  80%
+                            "footer footer" 100px / 200px 1fr;
+        }
+
+        .header{
+            background-color: #ddd;
+            grid-area: header;
+        }
+
+        .menu{
+            grid-area: left;
+            background-color: darkred;
+        }
+        .content{
+            grid-area: content;
+            background-color: #23424e;
+        }
+
+        .footer{
+            grid-area: footer;
+            background-color: #29bbcf;
+        }
+
+        @media (max-width: 500px) {
+            .wrapper{
+                width: 100%;
+                height: 100%;
+                border: 1px solid #000;
+                display: grid;
+                /*overflow: hidden;*/
+                grid-template: "header header"  60px
+                "content content"  80%
+                "footer footer" 100px / 200px 1fr;
+            }
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <!--<div>1</div>-->
+    <!--<div>2</div>-->
+    <!--<div>3</div>-->
+    <!--<div>4</div>-->
+    <!--<div>5</div>-->
+
+    <div class="header">header</div>
+    <div class="menu">menu</div>
+    <div class="content">content</div>
+    <div class="footer">footer</div>
+    <!--<div class=""></div>-->
+</div>
+
+
+</body>
+</html>

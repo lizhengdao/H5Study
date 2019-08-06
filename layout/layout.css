@@ -1,0 +1,131 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+
+.right{
+    position:absolute;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background-color:#fcc;
+    opacity: 0.5;
+}
+
+.left{
+    height:100px;
+    background-color:#123;
+    margin-right: 100px;
+}
+
+.wrapper{
+    margin-left:100px;
+    margin-top:100px;
+    width:100px;
+    height:100px;
+    background-color:black;
+    /*overflow:hidden;*/
+    display: inline-block;
+    /*position: absolute;*/
+
+
+}
+.content{
+    margin-left:50px;
+    margin-top:50px;
+    width:50px;
+    height:50px;
+    background-color:green;
+}
+
+.box1{
+    background-color:red;
+    margin-right: 100px;
+}
+
+.box2{
+    background-color:green;
+    margin-left: 100px;
+}
+.demo1{
+    background-color: red;
+    margin-bottom: 100px;
+}
+
+.demo2{
+    background-color: green;
+    margin-top: 200px;
+}
+
+.wrapper1{
+    overflow: hidden;
+}
+
+.wrapper2{
+    /*width:400px;*/
+    /*height:300px;*/
+    /*float: left;*/
+    /*position: relative;*/
+    border:1px solid black;
+}
+
+.content1{
+    float:left;
+    color: #fff;
+    background-color:black;
+    width:100px;
+    height:100px;
+}
+
+.wrapper2::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+p{
+    border-top:0 solid green;
+    clear: both;
+}
+
+.box3{
+    float: left;
+    width: 100px;
+    height:100px;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.demo3{
+    display: inline-block;
+    width: 150px;
+    height:150px;
+    background-color: green;
+}
+
+
+span::before{
+    content: "哈哈哈哈";
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background-color: green;
+}
+
+span::after{
+    content: "哈哈哈哈";
+}
+
+.img1 {
+    margin-right: 10px;
+    float: left;
+    width:100px;
+}
+
+.img2 {
+    margin-right: 10px;
+    float: right;
+    width:100px;
+}
+

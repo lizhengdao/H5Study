@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin:0;
+            paddding:0;
+        }
+
+        .con1 .left,
+        .con1 .right{
+            position:absolute;
+            top:0;
+            width:300px;
+            height:300px;
+            background: red;
+        }
+
+        .con1 .left{
+            left:0;
+        }
+
+        .con1 .right{
+            right:0;
+        }
+
+        .con1 .middle{
+            height:300px;
+            background-color: green;
+            /*width: 100%;*/
+            margin:0 300px 0 300px;
+
+        }
+
+        .con2 .left,
+        .con2 .right{
+
+            width:300px;
+            height:300px;
+            background: red;
+        }
+
+        .con2 .left{
+            float: left;
+        }
+
+        .con2 .right{
+            float:right;
+        }
+
+        .con2 .middle{
+            background-color: blue;
+            height: 300px;
+            margin:0 300px 0;
+        }
+
+        .con3{
+            display: flex;
+        }
+
+        /*.con3 div{*/
+            /*height:300px;*/
+            /*border:1px solid #000;*/
+            /*flex:1;*/
+        /*}*/
+
+        .con3 .left,
+        .con3 .right{
+
+            width:300px;
+            height:300px;
+            background: red;
+        }
+
+        .con3 .middle{
+            flex: 1;
+            background-color: green;
+        }
+
+
+
+    </style>
+
+
+</head>
+<body>
+
+
+<!--  三栏布局  左右宽度固定  中间部分宽度自适应  -->
+
+<!--  1.绝对定位+margin     -->
+<!--<div class="con1">-->
+    <!--<div class="left">left</div>-->
+    <!--<div class="middle">middle</div>-->
+    <!--<div class="right">right</div>-->
+<!--</div>-->
+
+<!--  2.float+margin  -->
+    <!--<div class="con2">-->
+        <!--<div class="left">left</div>-->
+        <!--<div class="right">right</div>-->
+        <!--<div class="middle">middle</div>-->
+    <!--</div>-->
+
+<!--  3.flex 实现 -->
+<div class="con3">
+    <div class="left">left</div>
+    <div class="middle">middle</div>
+    <div class="right">right</div>
+
+</div>
+
+
+
+<!--圣杯布局  双飞翼布局-->
+
+</body>
+</html>

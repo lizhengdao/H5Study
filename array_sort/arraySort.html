@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    var arr = [1,2,3,2,3,4,5,67,23,'a','b','c','A','B','C'];
+
+    var arr = [1,2,3,2,3,4,5,67,23];
+    console.log(arr.sort(function (a, b) {
+        // return a - b;
+        // return b - a;
+
+        //  正序排序   a  b
+        // if (a < b) {
+        //     //  a和b不进行交换
+        //     return -1;
+        // }
+        // if (a > b) {
+        //     //  a和b进行交换
+        //     return 1;
+        // }
+        // //  a == b 不进行交换
+        // return 0;
+
+        //  逆序排序
+
+    }));
+
+    //  乱序数组
+    var arr1 = arr;
+    arr1.sort(function (a, b) {
+        // return -1;
+        return Math.random() - 0.5;
+    })
+    console.log(arr1);
+
+    //  按照一定条件进行数组排序
+    var list = [
+        {name:'li', age:30},
+        {name:'liu', age:20},
+        {name:'wang', age:40}];
+    list.sort(function (a, b) {
+        console.log(a,b);
+        return a.age - b.age;
+    })
+    console.log(list);
+
+</script>
+
+</body>
+</html>
